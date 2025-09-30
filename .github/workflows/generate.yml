@@ -1,0 +1,15 @@
+name: Sample Archives Generator
+run-name: Generating sample archives
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        run: |
+          git commit -am "Automated report"
+          git push
